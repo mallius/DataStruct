@@ -1,0 +1,16 @@
+all: test.c list.c \
+	dtest.c dlist.c frame.c \
+	ctest.c clist.c \
+	StackTest.c stack.c \
+	QueueTest.c queue.c \
+	BiTreeTest.c bitree.c
+	gcc -g list.c test.c -o test
+	gcc -g dlist.c dtest.c -o dtest
+	gcc -g clist.c ctest.c -o ctest
+	gcc -g list.c stack.c StackTest.c -o StackTest
+	gcc -g list.c queue.c QueueTest.c -o QueueTest
+	gcc -g bitree.c BiTreeTest.c -o BiTreeTest
+
+.PHONY: clean
+clean:
+	rm -f  test dtest ctest StackTest QueueTest BiTreeTest
